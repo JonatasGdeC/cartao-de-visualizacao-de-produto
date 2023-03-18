@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+:root{
+    --fonte-primaria: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Fraunces', serif;
+
+    --background-principal: rgba(242, 234, 226, 1);
+    --background-conteudo: #ffffff;
+    --background-compra: rgba(61, 129, 104, 1);
+    --background-compra-ativado: rgba(26, 64, 50, 1);
+
+    --cor-texto-primaria: rgba(108, 114, 137, 1);
+    --cor-texto-secundaria: rgba(28, 35, 43, 1);
+    --cor-texto-terciaria: rgba(61, 129, 104, 1);
+    --cor-texto-compra: #ffffff; 
+}
+
+main{
+    background: var(--background-principal) ;
+    height: 100vh;
+}
+
+.conteudo{
+    display: flex;
+    gap: 32px;
+    width: 600px;
+    height: 450px;
+    background: var(--background-conteudo);
+    border-radius: 10px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.conteudo__imagem{
+    border-radius: 10px 0 0 10px;
+}
+
+.conteudo__imagem__mobile{
+    display: none;
+}
+
+.conteudo__informacao{
+    font-family: var(--fonte-primaria);
+}
+
+.conteudo__informacao__titulo{
+    color: var(--cor-texto-primaria);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 5px;
+    padding: 32px 0 20px 0;
+}
+
+.conteudo__informacao__nome{
+    font-family: var(--fonte-secundaria);
+    color: var(--fonte-secundaria);
+    font-weight: 700;
+    font-size: 32px;
+    padding: 0 32px 24px 0;
+}
+ 
+
+.conteudo__informacao__descricao{
+    color: var(--cor-texto-primaria);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    padding: 0 31.5px 29px 0;
+}
+
+.conteudo__informacao__valor{
+    display: flex;
+    gap: 19px;
+    padding-bottom: 30px;
+    align-items: center;
+}
+
+.conteudo__informacao__valor__atual{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-texto-terciaria);
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.conteudo__informacao__valor__antigo{
+    color: var(--cor-texto-primaria);
+    font-weight: 500;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+.conteudo__informacao__botao{
+    width: 236px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    gap: 12px;
+    color: var(--cor-texto-compra);
+    font-weight: 700;
+    font-size: 14px;
+    background: var(--background-compra);
+    border: transparent;
+    border-radius: 8px;
+}
+
+.conteudo__informacao__botao:hover{
+    background: var(--background-compra-ativado);
+    cursor: pointer;
+}
+
+@media(max-width: 610px){
+    .conteudo{
+        flex-direction: column;
+        gap: 0px;
+        width: 343px;
+        height: auto;
+        position: relative;
+    }
+
+    .conteudo__imagem{
+        display: none;
+    }
+
+    .conteudo__imagem__mobile{
+        display: flex;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .conteudo__informacao__nome{
+        padding: 0 0 16px 0;
+    }
+
+    .conteudo__informacao__descricao{
+        padding: 0 31.5px 24px 0;
+    }
+    .conteudo__informacao__sobre{
+        padding-left: 32px;
+    }
+
+    .conteudo__informacao__botao{
+        width: 295px;
+        margin: 0 23px 24px 25px;
+    }
+
+}
